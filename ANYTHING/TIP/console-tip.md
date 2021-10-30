@@ -9,4 +9,4 @@
 		○ snippets - 
 			§ console 라인의 여러줄을 치고싶을때 사용해 보자.
 			§ Sources 탭에서 사용
-ads - Block asd on this site - adblock 테스트
+    ○ ads - Block asd on this site - adblock 테스트
