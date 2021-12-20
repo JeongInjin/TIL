@@ -57,6 +57,54 @@ ls -al - 현재 파일 목록
 * git checkout exp - > branch 변경
 * 브랜치 변경후 commit 후 git log 살펴보면 브랜치 별로 로그가 다르다.
 * 파일을 열고 브랜치를 변경하면 파일 구성도 새롭게 적용된다.
+* branch 상태확인
+  * git log --branches --decorate => HEAD 및 branch별 최신 커밋파일을 알려준다.
+  * git log --branches --decorate --graph =>좌측에 빨간색 등의 줄이생긴다.
+  * git log --branches --decorate --graph --oneline - 한줄로 현재 상태를 보여준다.
+  * git log master..exp -> master 와 exp 차이점
+  * git log exp..master -> exp에는 없고 master에는 있는것
+  * git log -p exp..master -> 차이점 및 소스구문까지 필요할경우 -p 옵션
+  * git diff master..exp   
+
+
+* branch 병합 (merge)
+  * exp -> master 로 옮기는 방법
+    * exp -> master로 가져올려면 checkout을 master로 하고 git merge exp
+    * git branch -d exp -> 브랜치 삭제    
+* branch 수련
+* https://git-scm.com/book/en/v2
+* git checkout -b iss53 명렁어의 -b 옵션은
+  * git branch iss53  + git checkout iss53 를 한 것이다.
+* Fast-forward -> 
+* Merge made by the 'recursive' strategy. ->
+
+
+* stash (감추다, 숨겨두다)
+  * branch 작업중 다른 branch 작업을 할 경우 기존 commit 되지 않은 파일 때문에, 문제가 생길 수 있어, 해당 작업내용을 숨겨둘 수 있다.
+  * head 의 버전으로 이동하여 브랜치 상태를 깔끔하게 유지하고 commit 할 수 있다.
+* git stash save 또는 git stash -> git status -> clean
+* git stash apply -> 작업후 해당 branch stash 다시 불러오기
+* git stash list -> stash list 보기
+* git reset --hard 로 최신 커밋상태로 변경하면 git status 하면 clean 상태로 변경됨
+  * 해당 reset을 하였어도 stash list는 남아있음 git stash apply 로 다시 불러올 수 있음
+* reset -> 파일추가 -> add후 stash로 숨김처리 후 apply명령어 실행하면 가장 상단의 상태로 가져온다.
+  * 개별로 적용된 파일을 불러오고 싶을경우에는 git stash drop 로 가장 상단을 삭제 후 적용해야 한다.
+* git stash apply; git stash drop; 명령어로 불러오고 삭제처리 할 수 있다.
+  * git stash pop  -> 위 apply + drop 을 합쳐놓은 명령어
+* git stash 는 최소한 추적되고있어야 ㅎ나다(버전이 관리되고 있는)
+  * 예를 들어 파일을 생성하고 add하지 않은 상태는 stash 명령어에 포함되지 않는다.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
