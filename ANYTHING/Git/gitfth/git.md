@@ -119,8 +119,39 @@ ls -al - 현재 파일 목록
   * 소스파일을 백업한다
   * 다른 사람과 협업한다.
 * 저장소 생성
-  * 
+  * git init --bare
+    * .git 파일에 들어가는 working directory 가 없는..
+    * --bare  : 수정이 불가능한 저장소 
+    * git remote add
 
+
+* github
+  * Fork - 나의 소스로 복제된다(수정이 자유롭다)
+  * git clone gitAddress
+  * git log --reverse -> 로그 역순
+  * git checkout 커밋아이디 -> git log 시 해당 아이디만 확인 됨.
+  
+  * 기존 작업을 git에 연결하기
+    * git remote add origin gitAddress
+      * origin -> 별명(대부분 origin 씀)
+      * 삭제 하고 싶을 경우 git remote --help -> git remote remove 별칭
+      * git push -u origin master (최초 1회만 입력)
+      * git commit --amend -> 커밋 메시지 변경(push전에만 사용하자)
+      * git pull - 최신소스 당겨오기
+      * git log --decorate --all -> 모든 branch에 대한 fetch 필요 파일을 받고 끝난다 -> merge를 수행
+      * pull -> 파일을 다운받고 병합까지 진행한다.
+
+* tag
+  * releases -> 오픈된 버전
+  * tag 를 가르키즌 commit 버전은 항상 고정되어 있다.
+  * git tag 1.0.0 master(브랜치 이름을 적어도 되고, log 고유값을 적어도 됨)
+  * annotated tag
+    * git tag -a 1.1.0 -m "bugs fix" - 자세한 tag 설명을 적을시
+  * 태그 push
+    * git push --tags
+  * semeantic versioning
+    * git tag -d 1.1.0
+    * 
 
 
 
