@@ -77,6 +77,7 @@ ls -al - 현재 파일 목록
   * git branch iss53  + git checkout iss53 를 한 것이다.
 * Fast-forward -> 
 * Merge made by the 'recursive' strategy. ->
+* -D 묻지않고 지우기 옵션
 
 
 * stash (감추다, 숨겨두다)
@@ -94,6 +95,31 @@ ls -al - 현재 파일 목록
 * git stash 는 최소한 추적되고있어야 ㅎ나다(버전이 관리되고 있는)
   * 예를 들어 파일을 생성하고 add하지 않은 상태는 stash 명령어에 포함되지 않는다.
 
+
+* reset시 다시 돌리고 싶을경우 -> git reset --hard ORIG_HEAD
+* git reflog -> 모든 로그를 살펴볼 수 있다.
+
+* git reset 옵션  
+![img_1.png](img_1.png)
+
+* merge & conflict 
+  * 충돌이 일어나면 index 폴더에 고유번호 뒤에 번호가 붙는다.
+    * 3 way merge
+    * kdiff3 설치
+      * git config --global merge.tool kdiff3
+      * git mergetool
+      * 툴을 이용해 merge 가 완료된 후 git status 확인하면, orig 라는 파일이 샹성되어 있는데, 만약을 대비한 백업으로 삭제해도 무방하다.
+        * rm f1.txt.orig
+    * 3 way merge?
+      * 수정된 목록을 기준으로 병합한다.
+      * ex) 나는 파일삭제, Base는 파일 유, 상대방은 파일 유
+        * -> Base기준으로 파일 삭제가 수정 된 것이므로 삭제 병합 진행
+
+* 소스 저장소 remote repository
+  * 소스파일을 백업한다
+  * 다른 사람과 협업한다.
+* 저장소 생성
+  * 
 
 
 
