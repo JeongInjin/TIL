@@ -33,4 +33,19 @@
         * STOMP
           * 채팅 통신을 하기 위한 형식을 정의
           * HTTP 와 유사하게 간단히 정의되어 해석하기 편한 프토토콜
-          * 일반적으로 웹 소켓 위에서 사용
+          * 일반적으로 웹 소켓 위에서 사용'
+      
+
+
+---
+Spring Web Socket
+git : https://github.com/JeongInjin/Spring-BootRabbitMq.git
+SpringBoot + RabbitMQ 연습용 코딩.
+
+- WebSocket
+  - IE10+ 
+- SockJS
+  - IE8+
+- STOMP - 토픽 구독방식
+  - Spring Only
+
