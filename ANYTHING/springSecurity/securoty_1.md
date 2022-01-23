@@ -25,7 +25,12 @@
     }
 ```
 
-
+---
+* DB 연동 인증처리 1
+  * CustomDetailsService 생성후 UserDetailsService 인터페이스를 상속받아 loadUserByUsername 를 override 함
+  * security.core.userdetails 의 User 를 상속받은 AccountContext 를 생성하였음.
+    * UserDetails 를 반화하는 구현부
+  * SecurityConfig 에 configure override 메서드 생성(login 시도 시 해당 로직을 태우기 위함)
 
     
 
