@@ -172,6 +172,15 @@ git remote add origin https://github.com/계정/리포지토리
 ```
 
 
+---
+https://learngitbranching.js.org/?locale=ko
+로 접속하여 branch 실습을 해보았고, revert 기능 또한 실습을 하였다.  
+현재 좀 어려운 부분은 revert 나 rebase 라던지, 해당 rollback 을 시행 하였을때, 
+기존에 commit 된 정보중 몇가지의 commit 된 정보를 다시 merge 하는 부분?이 햇갈린다..
+음..그러니깐 revert 로 특정 시점으로 돌렸을 시, 몇가지의 commit 된 소스는 다시 merge 하고 싶은데, 쉽게 하는 방법?  
+이랄까..그러한 상황이 없으면 좋겠지만 항상 예외를 생각해야하니,,
+좀 더 배워서 동료들에게 학습한걸 알려주고 전파 해 줘야겠다.
+
 
 
 
