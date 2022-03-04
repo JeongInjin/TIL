@@ -57,3 +57,13 @@ but 고생한만큼 잘 작동하는거 같아 나중에 좀 더 고도화를 �
 이놈의 일복은 어딜가나 너무 많은거 같다.  좋은건지 나쁜건지..  
 내일도 화이팅 할것이다.
 
+#2022.03.04
+
+aop 형식의 로깅방식에서 -> interceptor 형식으로 변경 후 완성된줄 알았다.  
+문제가 발생한 부분이..발견되었다..  
+contentType 이 multiPart 형식으로 들어오면 ContentCachingResponseWrapper = response as ContentCachingResponseWrapper 부분이 exception 이 발생되었디.  
+일단 webView 를 내가 돌릴 수 없는 상황이라 급하게 방어 코드를 넣었다.  
+request is MultipartHttpServletRequest 인지 체크해서 해당 로직이 true 면 request body 를 가져오지 않는 방법으로 일단 우회를 했다.  
+주말동안 좀 더 알아보고 나서 회사가서 직접 webView 와 함께 테스트를 진행해 봐야할듯 하다.  
+월요일날 신입분들 스터디 진행을 위해 공부를 정리해 가야겠다.
+
