@@ -128,3 +128,12 @@ request is MultipartHttpServletRequest 인지 체크해서 해당 로직이 true
 좀 늦은감이 있지만, 디비를 좀 봐야겠다.. 요즘 디비공부를 안한지 오래되서..쪼매 힘드네..  jpa 는 요즘 공부를 한 덕에 그다지 어렵진 않다.  
 아직 큰 장애 이슈를 만난건 아니지만, 크게 걱정할 필요는 없는것 같다.  다만.. 디비설계와 테이블 설계를 내가 좀 하고싶다는 욕심이 있다.  
 내 스타일이 아닌지라 연관관계라던지 테이블 설계가 힘들다..ㅎㅎ 
+
+#2022.03.25
+오늘은 QueryDsl 부분에서 신박한 이슈를 만남..  
+table 명이 order 가 있고, right  2개의 예약어를 쓰는(mysql) 테이블이 있는데, order 테이블은 select from 으로 잘 불러와 지는 반면,  
+right 는 못불러오고 exception 이 계속 발생하였다.  
+결론은 order 는 Qfile 을 만들면서 order1 이라는 alias 가 만들어 지는 반면 right 는 right 라고 변환없이 만들어 지고 있어서,  
+결국  val right = QRight("right1") 같은 별칭을 따로 주었다.  
+또 하나를 배움 ㅎㅎ 개발팀장님 떙큐요!! :)  
+
