@@ -27,3 +27,37 @@
   - 남남에 가까운 컨셉
 - Companion object
   - 난 너가 존재하지 않더라도, 너만을 바라본다.
+
+
+
+
+#static, object, companion object
+
+- object declaration
+  - 싱글톤 형태
+  - 쓰레드 세이프함
+  - 지연 초기화 (실제로 사용될 때 초기화)
+  - const val 로 선언된 상수는 static 변수.
+  - object 내부에 선언된 변수와 함수들은 java 의 static 이 아님.
+    - 단 아래 케이스들은 static
+    - const val 로 상수 선언한 것들,
+    - @JVMStatic, @JVMField 애노테이션 붙은 변수 및 함수들
+
+- companion object
+  - 클래스 내부에 들어가는 블럭
+    - 클래스 자체가 static 이 아님.
+  - 해당 클래스가 로드될 때 초기화 됨.
+  - const val 로 선언된 상수는 static 변수
+  - 내부에 선언된 변수와 함수들은 java 의 static 이 아님.
+    - 단 아래 케이스들은 static
+    - const val 로 상수 선언한 것들,
+    - @JVMStatic, @JVMField 애노테이션 붙은 변수 및 함수들
+
+- object vs companion object 차이점  
+  - 초기화 시점이 다름
+  - object declaration 초기화 시점:
+    - 실제로 사용될 때 initialized 된다.실제로 내부 함수에 접근해야 init 블럭이 호출
+  - companion object 초기화 시점:
+    - 해당 클래스가 로드될 때 initialized 된다.실제로 해당 클래스를 생성하면 companion object 내부 init 블럭 호출.
+
+    
