@@ -1,0 +1,29 @@
+#Companion object, Nested 클래스, Inner 클래스 비교
+- companion object
+  - 유효한 성질 -> 자신의 속한 outer class 의 생성자에 접근이 가능하다.심지어 private 여도 접근이 가능하다.
+  - outer class 의 생성자에는 접근이 가능하지만 다른 멤버 합수, 변수 에는 접근할 수 없다.
+  - outer class 의 생성 없이 사용가능
+  - 자바의 static 이랑은 다르다.
+- Nested class - class 안에 class
+  - companion object 과 유사하게 outer class 의 생성없이 사용 가능하다.
+    - Nested class 의 객체 생성은 필요하다.
+    - Nested class 에서는 companion object 에 접근 가능하다.
+    - 자신을 감싼 outer class 로의 접근 불가능 (outer 의 생성자는 호출 가능`)
+    - outer class 에서는 Nested class 접근은 가능하다 Nested().function()...
+    - Outer.Nested().greeting()
+      - Outer class 의 객체 생성시 접근 가능하다고 생각하면 안된다. 거의 남남에 가깝다.
+      - Outer 안에있는ㄷ Nested class 의 객체를 생성한것이다.
+      - 결국 위 코드는 Outer class 안에 Nested class 를 생성하고 Nested class 안에 greeting 함수를 호출하였다.
+- Inner class
+  - outer class 를 생성후, inner class 생성 휴 사용.
+  - Inner 라는 키워드를 사용해 클래스를 정의한다.
+  - Nested class 와 달리, Outer class 에 접근가능
+  - outer class 의 멤머변수에 접근가능 private 여도 가능.
+
+- https://www.youtube.com/watch?v=nEOuwA_qx0U
+- Inner
+  - 너가 존재해야 내가 존재한다.
+- Nested
+  - 남남에 가까운 컨셉
+- Companion object
+  - 난 너가 존재하지 않더라도, 너만을 바라본다.
