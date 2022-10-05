@@ -1,6 +1,6 @@
 #Internet 기반 네트워크 입문
 - OSI 7 Layer 와 식별자
-
+![img_1.png](img_1.png)
 ![img.png](img.png)
 
 - 식별자
@@ -31,6 +31,25 @@
   - Metric: 네트워크 비용
 
 ---
+- L2 스위치에 대해서
+  - lan 케이블 연결됐다 -> Link-Up
+  - lan 케이블 연결이실패 -> Link-Down
+  - Up-Link
+    - L2 -> Router 에 연결된 선(L3 로 나아가는 연결 선)
+  - L2 Distribution Switch
+    - L2 Access 스위치를 위한 스위치
+    - VLAN(Virtual LAN) 기능을 제공하는 것이 일반적.
+  - 느낌
+    - 방하나 - L2
+    - 방하나 + 방하나 = 층 - L2 Distribution Switch
+    - 층+ 층.. = 건물 - Router
+  - 
 
+---
+- LAN 과 WAN 의 경계 그리고 Broadcast
+  - Broadcast(방송) - 전파..
+  - 전파시 타 network 는 멈춘다.
+  - H/W - 피지컬(물리계층)
+  - S/W - 로지컬 또는 버츄얼(논리계층)
 
-
+---
