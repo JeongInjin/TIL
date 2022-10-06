@@ -18,6 +18,15 @@
     - Src(출발지) -> Dst(목적지)
 
 ---
+- Encapsulation 과 Decapsulation
+  - Encapsulation
+    - 단위화 했다.(포장)
+  - Decapsulation
+![img.png](img.png)
+
+
+---
+
 
 
 
