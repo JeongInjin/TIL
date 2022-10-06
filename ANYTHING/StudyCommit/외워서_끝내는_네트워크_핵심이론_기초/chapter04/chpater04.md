@@ -26,6 +26,21 @@
 
 
 ---
+- 패킷의 생성과 전달
+  - Process -> segment -> packet -> frame -> L2 Access Switch -> Router -> internet
+
+---
+- Socket
+  - 엔드포인트, 
+  - 파일을 추상화한, 커널모드 프로토콜을 추상화한 유저모드 어플리케이션이 접근할 수 있도록 추상화한 인터페이스이다.
+  - 응용프로그램에서 tcp/ip를 이용하는 입구 역할을 하며, 응용프로그램과 소켓 사이의 인터페이스 역할을 하고있다.
+- 계층형 데이터 단위
+  - 
+![img_1.png](img_1.png)
+  - Segment - Segmentation
+  - 가래 떡집 생각하면 될듯.
+
+---
 
 
 
