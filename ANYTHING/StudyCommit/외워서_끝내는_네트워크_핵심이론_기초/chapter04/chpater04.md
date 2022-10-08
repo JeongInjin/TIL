@@ -44,6 +44,10 @@
 - TCP/IP 송수신 구조
 ![img_2.png](img_2.png)
 
+---
+- IP 헤더 형식
+  - ![img_3.png](img_3.png)
+
 
 
 
