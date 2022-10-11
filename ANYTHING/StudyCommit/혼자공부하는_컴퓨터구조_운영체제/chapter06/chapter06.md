@@ -28,6 +28,7 @@
     - DDR2 SDRAM 은 DDR SDRAM 보다 대역폭이 두배 넓은..(4차선..)
     - DDR3 SDRAM 은 DDR2 SDRAM 보다 대역폭이 두배 넓은..(8차선..)
     - DDR4 SDRAM 은 DDR3 SDRAM 보다 대역폭이 두배 넓은..(16차선..)
-    16차선
+
 ---
+
 
