@@ -21,4 +21,18 @@
 
 - vintage 는 이름에서 보이듯이 예전 버전과의 호환을 위해 존재한다. spring-boot-starter-test는 JUnit4를 가지고 있으며, 개발자가 선택해서 테스트 코드를 작성할 수 있게 한다.
 
+---
+#Mockito vs BDDMockito
+- Mock
+  - 복잡한 의존성 떄문에 원하는 테스트를 작성하기 힘들때,
+  - 가짜 객체를 만들어 테스트할 수 있게 도와주는 프레임워크
+- BDDMock
+  - Behavior-Driven Development Mockito 행위주도개발
+  - 테스트 대상의 상태의 변화를 테스트하는 것이고, 시나리오를 기반으로 테스트하는 패턴을 권장한다.
+  - BDD 권장 행동 패턴은 Given, When, Then 로 나눠진다..
+  - BDD 시나리오에 맞는 given 조건의 명칭같은 메서드를 사용하기위해 등장함.
+- 차이
+  - BDDMockito도 Mockito와 마찬가지로 mockito-core 안에 있다
+  - Mockito.when -> BDDMockito.given
+  - Mockito.verify -> BDDMockito.then
 
