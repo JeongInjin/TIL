@@ -151,7 +151,35 @@ image 속성 대신 사용함
 여기에 사용할 별도의 도커 파일이 필요함
 
 ```
+- 우분투 images 에 + git 을 설치버전의 images 만들기
+- docker images
+```text
+$ docker run -it --name git ubuntu:latest bash
+root@2f8bfff679f9:/# git
+bash: git: command not found
+root@2f8bfff679f9:/# apt-get update
+root@2f8bfff679f9:/# apt-get install -y git
+root@2f8bfff679f9:/# git --version
+git version 2.25.1
+```
+```text
+commit
+    ~  docker commit git ubuntu:git
+run
+    ~  docker run -it --name git2 ubuntu:git bash
+    
+도커 이미지 만들기
+이름 공간 이미지 이름 태그 
+    docker build -t subicura/ubuntu:git01 .
+명령어                                 빌드 컨텍스트
+```
+
+- Dockerfile
+- ![img_1.png](img_1.png)
+- ![img_2.png](img_2.png)
 
 ```text
-
+이미지 빌드
+docker build -t {이미지명:이미지태그} {빌드 컨텍스트}
+$ docker build -t sample:1 .
 ```
