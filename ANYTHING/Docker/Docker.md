@@ -62,4 +62,96 @@ hello world
     get hello
     $5
     world quit
-  - 
+  - exec 명령어
+  - exec 명령어는 run 명령어와 달리 실행중인 도커 컨테이너에 접속할 때 사용하며 컨테 이너 안에 ssh server등을 설치하지 않고 exec 명령어로 접속합니다.
+
+- docker compose
+  - docker-compose version
+```yaml
+version: '2'
+services:
+  db:
+    image: mariadb:10.9
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - ./wp:/var/www/html
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+```
+- docker compose 를 이용하여 mysql과 wordpress를 실행합니다.
+  - docker-compose up -d
+- docker compose를 이용하여 mysql과 wordpress를 종료합니다.
+  - docker-compose down
+```text
+version
+version: '3'
+docker-compose.yml 파일의 명세 버전
+docker-compose.yml 버전에 따라 지원하는 도커 엔진 버전도 다름
+
+services
+services: postgres:
+... django:
+...
+실행할 컨테이너 정의
+docker run --name django과 같다고 생각할 수 있음
+
+image
+services: django:
+image: django-sample
+컨테이너에 사용할 이미지 이름과 태그 태그를 생략하면 latest
+이미지가 없으면 자동으로 pull
+
+ports
+services: django:
+... ports:
+- "8000:8000"
+컨테이너와 연결할 포트(들) {호스트 포트}:{컨테이너 포트}
+
+environment
+services: mysql:
+... environment:
+- MYSQL_ROOT_PASSWORD=somewordpress: '3'
+- -
+컨테이너에서 사용할 환경변수(들) {환경변수 이름}:{값}
+
+volumes
+services: django:
+... volumes:
+- ./app:/app
+마운트하려는 디렉터리(들)
+{호스트 디렉터리}:{컨테이너 디렉터리}
+
+restart
+services: django:
+restart: always
+재시작 정책
+restart: "no"
+restart: always
+restart: on-failure restart: unless-stopped
+
+build
+django: build:
+context: .
+dockerfile: ./compose/django/Dockerfile-dev
+이미지를 자체 빌드 후 사용
+image 속성 대신 사용함
+여기에 사용할 별도의 도커 파일이 필요함
+
+```
+
+```text
+
+```
