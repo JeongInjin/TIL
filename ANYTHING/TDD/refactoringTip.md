@@ -4,8 +4,20 @@
   - invert 'if' condition
 - 매서드 클래스로 올리기
   - Method Object
+- 클래스를 서브클래스로 내리고 싶을때
+  - Push Members down..
 
+---
+설정:  
 
+![img_1.png](img_1.png)
+- Activate Coverage View 를 선택 해제하지 않으면 실행될 때마다 커버리지 윈도우가 떠서 불편
+- Replace active suites with the new one 을 선택하면 매번 새로운 테스트 결과가 보임
+
+![img_2.png](img_2.png)
+- code coverage options 에서 Use tracing 을 선택(default 는 sampling)
+- sampling 일 경우 수행된 라인(초록), 수행되지 않은 라인(붉은)만 보임
+- Use tracing 을 선택하면 조건에 의해서 수행되거나 되지않은 라인(노랑)이 보임
 ---
 1. Fake it till you make it
    1. fake it은 null, 0, 1, true, false, empty list 등을 반환하는 방법으로 테스트를 성공시키는 기법이다.
