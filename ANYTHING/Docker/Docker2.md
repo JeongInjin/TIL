@@ -148,10 +148,13 @@
   - 모든 컨테이너 삭제
     - docker rm $(docker ps -a -q)
   - 모든 이미지 삭제
-    - docker -f rmi $(docker images -q)
+    - docker rmi -f $(docker images -q)
       - -f 옵션은 이미지 삭제가 안될경우도 있어서 넣음.
-  - 
-
+```text
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi -f $(docker images -q)
+```
 
 
 
