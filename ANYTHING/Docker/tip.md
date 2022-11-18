@@ -133,6 +133,25 @@
       - 초경량 유틸리티만 모아논 패키지
 
 
+---
+- httd(apache2) it works 는 httpd 이미지의 apache 웹서버 기본 설정에 의해 /usr/local/apache2/htdocs 폴더에 있는 index.html임
+- docker exec -it my_apache /bin/sh 접속
+- cd /usr/local/apache2/htdocs 이동
+
+- -d, -it 합쳐서 -dit 로도 쓰임
+  - docker run -dit --name myubuntu ubuntu
+    - -d 와 -it 옵션을 같이써서 bash 쪽에 못붙은상태
+  - docker attach myubuntu
+    - 입력창으로 붙음
+  - 모든 컨테이너 중지
+    - docker stop $(docker ps -a -q)
+  - 모든 컨테이너 삭제
+    - docker rm $(docker ps -a -q)
+  - 모든 이미지 삭제
+    - docker -f rmi $(docker images -q)
+      - -f 옵션은 이미지 삭제가 안될경우도 있어서 넣음.
+  - 
+
 
 
 
