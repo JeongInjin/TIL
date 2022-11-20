@@ -49,6 +49,12 @@
   - COPY
     - 파일 또는 디렉토리를 docker 컨테이너에 복사. ADD 와 달리 URL 은 지정할 수 없으며, 압축 파일을 자동으로 풀어주지 않음.
 
+---
+  - ARG
+    - dockerfile 내에서 필요한 변수 설정 docker 이미지/컨테이너에서 사용하는 환경 변수를 설정하는 ENV 와 달리, dockerfile 스크립트 작성을 위해 필요한 변수 설정
+  - 
+
+
 
 ---
 - 가끔사용
@@ -56,10 +62,11 @@
   - docker container 표준 log
 - Docker kill {컨테이너 id 또는 name}
   - stop 은 즉시 컨테이너 중단하지 않지만, kill 은 즉시 중지함.
+- 
 
 - CMD 부분을 ["bin/sh"] 만 있더라도 옵션을 주어 CMD 를 덮을 수 있다.
   - docker run -dit -p 9999:80 --name httpdweb2 myweb2 /bin/sh -c httpd oreground
   - docker inspect {컨테이너 id 또는 image name}
-- 
+
 
 
