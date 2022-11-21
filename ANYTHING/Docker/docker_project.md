@@ -43,6 +43,27 @@
           - 예를 들어, PHP 언어를 쓴다면, index.php 로 디폴트 파일을 설정하기 위해 설정
     - 
 
+- 참고: nginx proxy HTTP 설정
+  - proxy_set_header   Host $host;
+    - host 헤더가 없다면 server_name
+  - proxy_set_header   X-Real-IP $remote_addr;
+    - 클라이언트 ip 주소
+  - proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+    - 클라이언트 IP 주소를 식별하기 위한 설정, 클라이언트 IP 부터 중간 IP 들을 리스트로 작성해서 송부
+      - 이 설정이 없으면 모든 http 요청은 reserved proxy 가 한것으로 기록되므로, 침해 사고시 클라이언트 IP 기록을 위해 필요함
+  - proxy_set_header   X-Forwarded-Host $server_name;
+    - 클라이언트와 reserved proxy 접속시 사용한 프로토콜 설정(https)
+  -rewrite 옵션
+    - regex: 매칭되는 URL 패턴을 설정
+      - nginx 에서 채택한 정규표현식 문법은 PCRE 구문으로, 본래 Perl 이라는 언어에서 유래된 것임
+      - URL: 변경할 URL 기재
+      - flag: 여러개의 location 이 설정되어 있을 때, 변경된 URL 이 다시 다른 location 에 매칭될 수 있으므로, 이를 어떻게 처리할지 설정
+        - break 를 쓰면 변경된 url 이 다시 다른 location 설정에 따르지 않고, 현재의 location 설정만 따르고 끝냄
+    - rewrite regex URL [flag];
+
+
+
+
 
 
 
