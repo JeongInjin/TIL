@@ -154,6 +154,9 @@
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker rmi -f $(docker images -q)
+
+#쓰지않는 이미지, 볼륨, 네트워크 삭제
+docker system prune -a --volumes
 ```
 
 

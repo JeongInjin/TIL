@@ -17,6 +17,16 @@
     - 컨테이너에서 사용하는 volume 설정으로 대체 가능 (옵션)
     - docker -v 옵션과 동일한 역할
     - 여러 volume 을 지정할 수 있기 때문에, 리스트 처럼 작성
+    - 특정 호스트 PC 와 연결하지 않고, 해당 볼륨을 컨테이너 삭제시에도 유지만 하고 싶을경우, 다음과 같이 설정을 해줘야함
+      - 이름1:컨테이너내부경로1
+      - 이름2:컨테이너 내부경로2
+      - volumes:
+        - 이름1:
+        - 이름2:
+    - docker volume ls
+    - docker volume inspect {volume name}
+    - docker volume rm 볼륨이름 - 볼륨 삭제
+    - docker volume prune - 쓰지 않는 볼륨 삭제
   - networks:
     - 컨테이너간 네트워크 분리를 위한 추가 설정 부분 (옵션)
 
@@ -35,4 +45,19 @@
   - docker-compose up 실행
   - docker-compose stop 중지
   - docker-compose down 삭제
-  - 
+
+---
+
+- docker service 띄우자.
+  - wordpress
+    - docker compose up
+    - wordpress 로 exec -it 로 접속후, blog 파일 생성 mv * blog/ 후 exit
+    - 최초 접속 -> 내주소/blog/wp-admin/install.php 해줘야함
+
+
+- crontab -e
+- crontab -l
+
+
+
+
